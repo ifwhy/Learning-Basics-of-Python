@@ -1,21 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int fibonacci(int n){
-    if(n == 1 or n == 0){
-        return 1;
-    } else {
-        return fibonacci(n-1) + fibonacci(n-2);
-    }
-}
-
 int main()
 {
-    // Program membuat suku ke-n bilangan dalam barisan fibonacci
-    int n;
-    cout << "PROGRAM BARISAN FIBONACCI" << endl;
-    cout << "Suku ke berapa yang ingin Anda cari?";
+    // Program membuat n suku pertama dalam barisan fibonacci
+    int n, fn, fn1 = 1, fn2 = 0;
+    cout << "PROGRAM MEMBUAT N SUKU PERTAMA DALAM BARISAN FIBONACI" << endl;
+    cout << "Masukkan sebuah bilangan asli : ";
     cin >> n;
-    cout << "Suku ke-" << n << " dalam barisan fibonacci adalah " << fibonacci(n);
+
+    cout << n << " suku pertama dalam barisan fibonacci adalah : ";    for(int i = 1; i <= n; i++){
+        fn = fn1 + fn2;
+        cout << fn << " ";
+        fn2 = fn1;
+        fn1 = fn;
+    }
     return 0;
 }
