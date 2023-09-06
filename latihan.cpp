@@ -3,10 +3,17 @@ using namespace std;
 
 int main()
 {
-    int a, t;
-    double result;
-    cin >> a >> t;
-    result = 0.5*a*t;
-    printf("%.2lf \n", result);
+    struct titik {
+        int x, y, z;
+    }; 
+    titik a, b, c;
+    cin >> a.x >> b.x >> c.x;
+    cin >> a.y >> b.y >> c.y;
+    cin >> a.z >> b.z >> c.z;
+
+
+    cout << a.x << " " << a.y << " " << a.z << " " << endl;
+    cout << b.x << " " << b.y << " " << b.z << " " << endl;
+    cout << c.x << " " << c.y << " " << c.z << " " << endl;
     return 0;
 }
