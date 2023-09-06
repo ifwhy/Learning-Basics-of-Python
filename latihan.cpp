@@ -1,20 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    float n;
-    cin >> n;
+    int x1, x2, y1, y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+    cout << abs(x1 - x2) + abs(y1 - y2);
 
-    if(n == trunc(n)){
-        cout << n << " " << n;
-    } else if (n > 0){
-        cout << trunc(n)<< endl;
-        cout << trunc(n+1) ;
-    } else {
-        cout << trunc(n)-1 << endl;
-        cout << trunc(n)  ;
-    }
-   
     return 0;
 }
