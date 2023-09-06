@@ -1,21 +1,20 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-int fibonacci(int n){
-    if(n == 1 or n == 0){
-        return 1;
-    } else {
-        return fibonacci(n-1) + fibonacci(n-2);
-    }
-}
 
 int main()
 {
-    // Program membuat suku ke-n bilangan dalam barisan fibonacci
-    int n;
-    cout << "PROGRAM BARISAN FIBONACCI" << endl;
-    cout << "Suku ke berapa yang ingin Anda cari? : ";
+    float n;
     cin >> n;
-    cout << "Suku ke-" << n << " dalam barisan fibonacci adalah " << fibonacci(n);
+
+    if(n == trunc(n)){
+        cout << n << " " << n;
+    } else if (n > 0){
+        cout << trunc(n)<< endl;
+        cout << trunc(n+1) ;
+    } else {
+        cout << trunc(n)-1 << endl;
+        cout << trunc(n)  ;
+    }
+   
     return 0;
 }
