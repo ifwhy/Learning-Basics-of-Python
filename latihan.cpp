@@ -3,8 +3,12 @@ using namespace std;
 
 int main()
 {
-    string kata;
-    getline(cin, kata);
-    cout << kata;
+    int n, x, sum = 0;
+    cin >> n;
+    for(int i = 1; i <= n; i++){
+        cin >> x;
+        sum += x;
+    }
+    cout << sum;
     return 0;
 }
