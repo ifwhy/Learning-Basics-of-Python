@@ -3,9 +3,10 @@ using namespace std;
 
 int main()
 {
-    int x1, x2, y1, y2;
-    cin >> x1 >> y1 >> x2 >> y2;
-    cout << abs(x1 - x2) + abs(y1 - y2);
-
+    int a, t;
+    double result;
+    cin >> a >> t;
+    result = 0.5*a*t;
+    printf("%.2lf \n", result);
     return 0;
 }
