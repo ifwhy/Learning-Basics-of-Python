@@ -1,26 +1,19 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    int n;
-    cout << "Masukkan sebuah bilangan : ";
+    double n;
     cin >> n;
 
-    for(int i = 1; i <= n; i++){
-        if(i == 1 or i == n){
-            for(int j = 1; j <= n; j++){
-                cout << "*";
-            }
-            cout << endl;
-        } else {
-                cout << "*";
-                for(int l = 1; l <= n-2; l++){
-                    cout << " ";
-                } 
-                cout << "*";
-                cout << endl;
-        }
+    while(n > 1){
+        n = n/2;
+
+    }
+    if(n == 1){
+        cout << "ya";
+    } else {
+        cout << "bukan";
     }
     return 0;
 }
