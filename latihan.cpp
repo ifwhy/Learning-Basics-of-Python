@@ -3,17 +3,13 @@ using namespace std;
 
 int main()
 {
-    double n;
+    int n;
     cin >> n;
 
-    while(n > 1){
-        n = n/2;
-
-    }
-    if(n == 1){
-        cout << "ya";
-    } else {
-        cout << "bukan";
+    for(int i = n; i >= 1; i--){
+        if(n%i == 0){
+            cout << i << endl;
+        }
     }
     return 0;
 }
