@@ -3,13 +3,13 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int n, sum = 0;
+    
 
-    for(int i = n; i >= 1; i--){
-        if(n%i == 0){
-            cout << i << endl;
-        }
+    // Untuk keluar tekan shift + alt + M
+    while(cin >> n){
+        sum += n;
     }
+    cout << sum << endl;
     return 0;
 }
