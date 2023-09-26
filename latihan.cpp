@@ -3,13 +3,22 @@ using namespace std;
 
 int main()
 {
-    int n, sum = 0;
-    
+    int n, k;
+    int max, min;
 
-    // Untuk keluar tekan shift + alt + M
-    while(cin >> n){
-        sum += n;
+    cin >> n;
+    for(int i = 1; i <= n; i++){
+        cin >> k;
+        if(i == 1){
+            min = k;
+            max = min;
+        }
+        if(k < min){
+            min = k;
+        } else if (k > max) {
+            max = k;
+        }
+        cout << max << " " << min << endl;
     }
-    cout << sum << endl;
     return 0;
 }
