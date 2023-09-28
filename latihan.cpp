@@ -3,22 +3,17 @@ using namespace std;
 
 int main()
 {
-    int n, k;
-    int max, min;
-
+    double n;
     cin >> n;
-    for(int i = 1; i <= n; i++){
-        cin >> k;
-        if(i == 1){
-            min = k;
-            max = min;
-        }
-        if(k < min){
-            min = k;
-        } else if (k > max) {
-            max = k;
-        }
-        cout << max << " " << min << endl;
+
+    while(n > 1){
+        n = n/2;
+
+    }
+    if(n == 1){
+        cout << "ya";
+    } else {
+        cout << "bukan";
     }
     return 0;
 }
