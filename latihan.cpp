@@ -3,9 +3,18 @@ using namespace std;
 
 int main()
 {
-    char kalimat[101];
-    while((scanf("%s", kalimat)) != EOF){
-        cout << kalimat << endl;
+    int n, k = 0;
+    cin >> n;
+
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++){
+            if(k == 10){
+                k = 0;
+            }
+            cout << k;
+            k++;
+        }
+        cout << endl;
     }
     return 0;
 }
