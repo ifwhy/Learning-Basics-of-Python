@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
+int doubleFaktorial(int n){
+    if(n == 1){
+        return 1;
+    } else if(n%2 == 0){
+        return (n/2)*doubleFaktorial(n-1);
+    } else {
+        return n*doubleFaktorial(n-1);
+    }
+}
+
 int main()
 {
-    int n, k = 0;
+    int n;
     cin >> n;
-
-    for(int i = 1; i <= n; i++){
-        for(int j = 1; j <= i; j++){
-            if(k == 10){
-                k = 0;
-            }
-            cout << k;
-            k++;
-        }
-        cout << endl;
-    }
+    cout << doubleFaktorial(n);
     return 0;
 }
