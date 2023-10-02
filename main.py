@@ -1,14 +1,13 @@
-def kotak(x):
-    for i in range(1, x+1):
-        if i == 1 or i == (x+1)/2 or i == x:
-            print("* "*x)
-        else :
-            print("* " + " "*(x-4) + " * " + " "*(x-4) + " *")
+def ketupat(n):
+    k = int((n+1)/2)
+    for i in range(1, k+1):
+        print(" "*(i-1) + "* "*(k-i+1))
+    for j in range(k-1, 0, -1):
+        print(" "*(j-1) + "* "*(k-j+1))
 
 x = int(input())
 
 if x%2 == 1:
-    kotak(x)
+    ketupat(x)
 else :
-    kotak(x-1)
-    
+    ketupat(x-1)
