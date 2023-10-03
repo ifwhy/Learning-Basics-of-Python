@@ -1,13 +1,40 @@
-def ketupat(n):
-    k = int((n+1)/2)
-    for i in range(1, k+1):
-        print(" "*(i-1) + "* "*(k-i+1))
-    for j in range(k-1, 0, -1):
-        print(" "*(j-1) + "* "*(k-j+1))
+# NAMA : 
+# NIM :
+# KELAS :
 
 x = int(input())
 
-if x%2 == 1:
-    ketupat(x)
-else :
-    ketupat(x-1)
+if x % 2 == 0:
+    x -= 1
+
+baris = x // 2 + 1
+spasi = 0
+tes = x
+
+for i in range(baris, 1, -1):
+    if spasi != 0:
+        print(" " * spasi, end="")
+    
+    for j in range(1, tes + 1):
+        if j % 2 == 0:
+            print("   ", end="")
+        else:
+            print("*", end="")
+    print()
+    tes -= 2
+    spasi += 2
+
+baris2 = x // 2
+
+for i in range(baris2 + 1):
+    if spasi != 0:
+        print(" " * spasi, end="")
+    
+    for j in range(1, tes + 1):
+        if j % 2 == 0:
+            print("   ", end="")
+        else:
+            print("*", end="")
+    print()
+    tes += 2
+    spasi -= 2
