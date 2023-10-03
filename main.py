@@ -5,10 +5,11 @@
 def ketupat(n):
     k = int((n+1)/2)
     for i in range(1, k):
-        print("* "*i + " "*(2*x-1-4*i) + " *"*i)
-    print("* "*n)
+        print(" "*(2*(i-1)) + "*" + " "*(2*n-4*i+1) + "*")
+    print(" "*(n-1) + "*")
     for j in range(k-1, 0, -1):
-        print("* "*j + " "*(2*x-1-4*j) + " *"*j)
+        print(" "*(2*(j-1)) + "*" + " "*(2*n-4*j+1) + "*")
+        
         
 
 x = int(input())
