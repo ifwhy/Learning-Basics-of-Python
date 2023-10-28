@@ -9,15 +9,17 @@ float degreeToRad(float n);
 float radToDegree(float n);
 float standarDevPop(float data[], int n);
 float standarDevSam(float data[], int n);
+float simpanganRataRata(float data[], int n);
+void apaPrima(int n);
 
 int main()
 {
-    char pilih, pilih1, pilih2, pilih3, pilih4, pilih4_6;
-    int banyakData;
+    char pilih, pilih1, pilih2, pilih3, pilih4, pilih4_6, pilih5;
+    int banyakData, prima1, prima2;
     float bil1, bil2, hasil, dataStat, sum = 0, dataStat1;
 
     // Menu
-    printf("_____________________________________________________\n");
+    printf("\n_____________________________________________________\n");
     printf("\t\tKALKULATOR MILIK IVAN\n");
     printf("_____________________________________________________\n");
 
@@ -26,7 +28,7 @@ int main()
     printf("2. Trigonometri\n");
     printf("3. Logaritma\n");
     printf("4. Statistika\n");
-    printf("5. Barisan dan Deret\n");
+    printf("5. Bilangan Prima\n");
     printf("_____________________________________________________\n");
 
 
@@ -233,7 +235,7 @@ int main()
         } else if(pilih3 == '3'){
             printf("\n\t\t\tLOGARITMA\n");
             printf("_____________________________________________________\n");
-            printf("Basis \t\t: ");
+            printf("Basis \t\t\t: ");
             scanf("%f", &bil1);
             printf("Numerus \t\t: ");
             scanf("%f", &bil2);
@@ -250,7 +252,8 @@ int main()
         printf("3. Modus\n");
         printf("4. Standar Deviasi Populasi dan Variansinya\n");
         printf("5. Standar Deviasi Sampel dan Variansinya\n");
-        printf("6. Menghitung SUM (Keperluan Regresi atau Korelasi)\n");
+        printf("6. Simpangan Rata-Rata\n");
+        printf("7. Menghitung SUM (Untuk Regresi dan Korelasi)\n");
         printf("_____________________________________________________\n");
         printf("PILIH \t\t\t: ");
         scanf("%s", &pilih4);
@@ -296,6 +299,18 @@ int main()
             printf("\nStandar Deviasi \t: %.3f\n", standarDevSam(data, banyakData));
             printf("Variansi/Ragam \t\t: %.3f", pow(standarDevSam(data, banyakData), 2));
         } else if(pilih4 == '6'){
+            printf("\n\t\tSIMPANGAN RATA-RATA\n");
+            printf("_____________________________________________________\n");
+            printf("Banyak Data \t\t: ");
+            scanf("%d", &banyakData);
+            float data[banyakData];
+            for(int i = 0; i < banyakData; i++){
+                printf("Data ke-%d : ", i+1);
+                scanf("%f", &data[i]);
+            }
+            printf("\nSimpangan Rata-Rata \t: %.3f\n", simpanganRataRata(data, banyakData));
+
+        } else if(pilih4 == '7'){
             printf("\n\t\t\tJUMLAHAN\n");
             printf("_____________________________________________________\n");
             printf("1. SUM X\n");
@@ -338,9 +353,27 @@ int main()
                 printf("MASUKAN ANDA SALAH\n");
             }
         }
+    } else if(pilih == '5'){
+        printf("_____________________________________________________\n");
+        printf("BILANGAN PRIMA \t\t: \n");
+        printf("1. Cek Apakah Prima\n");
+        printf("2. Mendata Bilangan Prima\n");
+        printf("_____________________________________________________\n");
+        printf("PILIH \t\t\t: ");
+        scanf("%s", &pilih5);
+
+        if(pilih5 == '1'){
+            printf("\n\t\tCEK APAKAH PRIMA\n");
+            printf  ("_____________________________________________________\n");
+            printf("Bilangan \t\t: ");
+            scanf("%d", &prima1);
+            apaPrima(prima1);
+        } else if(pilih5 == '2'){
+            printf("\n\t\tPROGRAM BELUM DIBUAT HEHE\n");
+        }
     }
     printf("\n_____________________________________________________\n");
-    printf("\tMAKASI DAH GUNAIN KALKULATOR IVAN");
+    printf("\tMAKASI DAH GUNAIN KALKULATOR IVAN\n\n");
     
     return 0;
 }
@@ -376,4 +409,37 @@ float standarDevSam(float data[], int n){
     }
     stDev = sqrt(sumSquare/(n-1));
     return stDev;
+}
+
+float simpanganRataRata(float data[], int n){
+    float sum = 0, average, sumAbs = 0;
+    for(int i = 0; i < n; i++){
+        sum += data[i];
+    }
+    average = sum/n;
+    for(int i = 0; i < n; i++){
+        sumAbs += abs(data[i] - average);
+    }
+    return sumAbs/n;
+}
+
+void apaPrima(int n){
+    int hasil;
+    if(n > 1){
+        for(int i = 2; i <= sqrt(n); i++){
+            if(n%i == 0) {
+                hasil = 0;
+                break;
+            }
+        hasil = 1;
+        }
+    } else {
+        hasil = 0;
+    }
+
+    if(hasil == 1){
+        printf("%d adalah bilangan prima\n", n);
+    } else {
+        printf("%d bukan bilangan prima\n", n);
+    }
 }
