@@ -1,3 +1,9 @@
+# Nama          : Ivan Wahyu Nugroho
+# NIM           : L0123068
+# Prodi/Kelas   : Informatika/b
+
+
+# Pola 8
 def ketupat(n):
     k = n-1
     for j in range(n, 2, -2):
