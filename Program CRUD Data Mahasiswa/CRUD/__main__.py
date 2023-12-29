@@ -1,0 +1,1 @@
+print("Ini adalah package untuk program CRUD mahasiawa Universitas Sepuluh Maret")
